@@ -1,0 +1,21 @@
+# Standard evaluation config (adapter sweep on all test sets )
+method: instruction
+
+model:
+  name: google/gemma-3-4b-it
+  quantize: nf4
+  attn_implementation: eager
+
+eval:
+  batch_size: 4
+  do_sample: false
+  temperature: 0.0
+  cap_min: 1
+  cap_max: 1024
+  compute_ppl: true
+
+data:
+  root: ${paths.data_root}
+
+output:
+  root: ${paths.output_root}/eval/standard

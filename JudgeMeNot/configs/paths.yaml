@@ -1,0 +1,7 @@
+# Path configuration.
+
+local:
+  data_root: ./data/qa
+  output_root: ./outputs
+  rag_cache: ./outputs/rag_cache
+  merged_root: ./outputs/merged

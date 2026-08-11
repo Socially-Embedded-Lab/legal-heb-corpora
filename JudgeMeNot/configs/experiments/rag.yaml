@@ -1,0 +1,29 @@
+# RAG evaluation configuration.
+method: instruction
+
+model:
+  name: google/gemma-3-4b-it
+  quantize: nf4
+  seq_length: 512
+  attn_implementation: eager
+
+eval:
+  batch_size: 4
+  cap_min: 1
+  cap_max: 1024
+  compute_ppl: true
+
+rag:
+  cache_dir: ${paths.rag_cache}
+  embedding_model: dicta-il/dictabert
+  k: 3
+  exact_match_threshold: 0.95
+  context_modes:
+    - own_context
+    - others_context
+
+data:
+  root: ${paths.data_root}
+
+output:
+  root: ${paths.output_root}/eval/rag

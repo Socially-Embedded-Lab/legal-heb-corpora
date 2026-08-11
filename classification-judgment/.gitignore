@@ -1,0 +1,6 @@
+play.ipynb
+__pycache__/
+*.py[cod]
+.env
+*.egg-info/
+.ipynb_checkpoints/

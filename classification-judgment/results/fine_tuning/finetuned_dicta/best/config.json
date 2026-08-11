@@ -1,0 +1,44 @@
+{
+  "_name_or_path": "dicta-il/dictabert",
+  "architectures": [
+    "BertForSequenceClassification"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "\u05e2\u05d5\u05d1\u05d3\u05d5\u05ea \u05d4\u05de\u05e7\u05e8\u05d4",
+    "1": "\u05e8\u05d0\u05d9\u05d5\u05ea \u05dc\u05e2\u05d5\u05e0\u05e9",
+    "2": "\u05d8\u05d9\u05e2\u05d5\u05e0\u05d9 \u05d4\u05e6\u05d3\u05d3\u05d9\u05dd",
+    "3": "\u05ea\u05e1\u05e7\u05d9\u05e8 \u05e9\u05d9\u05e8\u05d5\u05ea \u05de\u05d1\u05d7\u05df",
+    "4": "\u05d3\u05d9\u05d5\u05df \u05d5\u05d4\u05db\u05e8\u05e2\u05d4",
+    "5": "\u05de\u05d9\u05d3\u05e2 \u05d0\u05d7\u05e8"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "label2id": {
+    "\u05d3\u05d9\u05d5\u05df \u05d5\u05d4\u05db\u05e8\u05e2\u05d4": 4,
+    "\u05d8\u05d9\u05e2\u05d5\u05e0\u05d9 \u05d4\u05e6\u05d3\u05d3\u05d9\u05dd": 2,
+    "\u05de\u05d9\u05d3\u05e2 \u05d0\u05d7\u05e8": 5,
+    "\u05e2\u05d5\u05d1\u05d3\u05d5\u05ea \u05d4\u05de\u05e7\u05e8\u05d4": 0,
+    "\u05e8\u05d0\u05d9\u05d5\u05ea \u05dc\u05e2\u05d5\u05e0\u05e9": 1,
+    "\u05ea\u05e1\u05e7\u05d9\u05e8 \u05e9\u05d9\u05e8\u05d5\u05ea \u05de\u05d1\u05d7\u05df": 3
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "newmodern": true,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "problem_type": "single_label_classification",
+  "torch_dtype": "float32",
+  "transformers_version": "4.41.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 128000
+}

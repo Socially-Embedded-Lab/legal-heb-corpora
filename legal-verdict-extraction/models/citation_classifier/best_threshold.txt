@@ -1,0 +1,6 @@
+0.6500
+PR-AUC: 0.9127
+F1: 0.9032
+Precision: 0.8615
+Recall: 0.9492
+False Positive Rate: 0.0763

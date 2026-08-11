@@ -1,0 +1,35 @@
+# CLoRA: instruction tuning on pre-merged base models
+method: clora
+
+model:
+  name: google/gemma-3-4b-it
+  quantize: nf4
+  seq_length: 512
+  attn_implementation: eager
+
+lora:
+  rank: 8
+  alpha: 32
+  dropout: 0.05
+  target_modules: all-linear
+
+training:
+  epochs: 15
+  batch_size: 2
+  gradient_accumulation: 2
+  learning_rate: 2.0e-4
+  scheduler: constant
+  warmup_ratio: 0.03
+  save_steps: 200
+  logging_steps: 20
+  patience: 2
+  optim: adamw_torch_fused
+  seed: 42
+
+data:
+  root: ${paths.data_root}
+  merged_root: ${paths.merged_root}
+
+output:
+  root: ${paths.output_root}/adapters/clora_gemma4b
+  tensorboard: ${paths.output_root}/runs/clora_gemma4b

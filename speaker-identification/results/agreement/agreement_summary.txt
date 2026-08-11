@@ -1,0 +1,4 @@
+Total compared rows: 50
+Percent Agreement: 0.9000 (90.00%)
+Cohen's Kappa: 0.8575
+Labels: ['הגנה', 'נאשם', 'שופט', 'שירות המבחן', 'תביעה']

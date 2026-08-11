@@ -1,0 +1,36 @@
+# LoRA-rank ablation study
+method: instruction
+
+model:
+  name: google/gemma-3-4b-it
+  quantize: nf4
+  seq_length: 512
+  attn_implementation: eager
+
+lora:
+  rank: 8
+  alpha: 32
+  dropout: 0.05
+  target_modules: all-linear
+
+training:
+  epochs: 15
+  batch_size: 2
+  gradient_accumulation: 2
+  learning_rate: 2.0e-4
+  scheduler: constant
+  save_steps: 100
+  patience: 2
+  optim: adamw_torch_fused
+  seed: 42
+
+ablation:
+  ablation_type: lora_rank
+  ranks: [2, 4, 8, 16, 32]
+  metrics: [bleu, rouge, bertscore]
+
+data:
+  root: ${paths.data_root}
+
+output:
+  root: ${paths.output_root}/ablation/lora_rank

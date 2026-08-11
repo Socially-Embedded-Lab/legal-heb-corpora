@@ -1,0 +1,14 @@
+# Corpora to process. Valid keys: drugs, weapon, no_titles
+# NOTE: these are data values as well as directory names — they appear in the
+# `type` column of data/labeled/all_combined.csv. Do not rename them.
+TYPES: ['drugs', 'weapon']
+
+# Paths are relative to the project root. Both the extractor script and the
+# notebooks resolve them against the repo root, so they work from any cwd.
+DOCX_PATH: data/raw/{type}               # Input DOCX verdicts
+CSV_PATH: data/interim/{type}            # Per-verdict paragraph CSVs
+PARAGRAPHS_PATH: data/paragraphs/{type}  # Intermediate per-paragraph dumps
+GT_PATH: data/labeled                    # Ground-truth labeled datasets
+RESULTS_PATH: results                    # Model and GPT outputs
+
+OPENAI_API_KEY:                          # Place your API key here

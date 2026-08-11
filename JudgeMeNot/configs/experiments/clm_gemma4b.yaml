@@ -1,0 +1,67 @@
+# Causal LM training on HuggingFace datasets (text continuation)
+method: clm
+
+model:
+  name: google/gemma-3-4b-it
+  quantize: nf4
+  seq_length: 256
+  attn_implementation: eager
+
+lora:
+  rank: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: all-linear
+
+training:
+  epochs: 1
+  max_steps: 2500
+  batch_size: 2
+  gradient_accumulation: 2
+  learning_rate: 2.0e-4
+  scheduler: linear
+  warmup_steps: 5
+  weight_decay: 0.01
+  save_steps: 20
+  logging_steps: 25
+  patience: 3
+  optim: paged_adamw_8bit
+  seed: 3407
+
+data:
+  # Each CSV has a 'split' column (train/eval/test)
+  chunks_root: data/chunks
+  datasets:
+    - Judge_A
+    - Judge_B
+    - Judge_C
+    - Judge_D
+    - Judge_E
+    - Judge_F
+    - Judge_G
+    - Judge_H
+    - Judge_I
+    - Judge_J
+    - Judge_K
+    - Judge_L
+    - Judge_M
+    - Judge_N
+    - Judge_O
+    - Judge_P
+    - Judge_Q
+    - Judge_R
+    - Judge_S
+    - Judge_T
+    - Judge_U
+    - Judge_V
+    - Judge_W
+    - Judge_X
+    - Judge_Y
+    - Judge_Z
+    - Judge_AA
+    - Judge_AB
+    - Judge_AC
+
+output:
+  root: ${paths.output_root}/adapters/clm_gemma4b
+  tensorboard: ${paths.output_root}/runs/clm_gemma4b

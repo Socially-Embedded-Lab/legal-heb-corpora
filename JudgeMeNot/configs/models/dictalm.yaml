@@ -1,0 +1,6 @@
+# DictaLM model settings.
+model:
+  name: dicta-il/dictalm2.0-instruct
+  quantize: none
+  seq_length: 512
+  attn_implementation: eager
