@@ -16,6 +16,7 @@ structure, and history-free working tree.
 | [legal-verdict-extraction](legal-verdict-extraction/) | Structured data extraction from Israeli verdicts for sentencing prediction — indictment facts, legal citations and sentencing ranges across 8,077 verdicts, combining GPT extraction with a fine-tuned heBERT citation classifier (F1 0.9032). |
 | [JudgeMeNot](JudgeMeNot/) | Replication code for the ACL 2026 paper on personalizing LLMs to emulate judicial reasoning in Hebrew — per-judge LoRA adapters over Gemma/DictaLM (CLM, instruction tuning, CLORA, RAG), evaluated by text metrics and per-judge DictaBERT discernment classifiers. **Incomplete: `src/data/` is missing.** |
 | [speaker-identification](speaker-identification/) | Speaker attribution in Hebrew verdicts — classifies each sentence as spoken by the judge, defense, prosecution or probation service using `gpt-4.1` with paragraph context. 906-sentence gold set at 87.6% macro-F1; inter-annotator κ 0.86. |
+| [legalAI](legalAI/) | **Previous-stage project** — criminal sentence classification for Israeli weapon- and drug-related verdicts via few-shot learning (SetFit and GPT). Uses a manually tagged dataset built with Ministry of Justice criminal-law experts, plus a ChatGPT-generated/refined dataset. Predates and is unrelated to the other projects above. |
 
 ---
 
@@ -29,7 +30,8 @@ Innovation_Authority_Artifacts/
 ├── multilabel-defendant-classification/   # Vendored project (see its own README)
 ├── legal-verdict-extraction/              # Vendored project (see its own README)
 ├── JudgeMeNot/                            # Vendored project (see its own README)
-└── speaker-identification/                # Locally delivered project
+├── speaker-identification/                # Locally delivered project
+└── legalAI/                               # Vendored, previous-stage project (see its own README)
 ```
 
 ## Git LFS
@@ -92,6 +94,10 @@ imports for no gain.
   from scratch. The private email that carried the archive was **excluded**; its project
   write-up attachment was kept in `docs/`. Two 0-byte notebooks were omitted and
   documented rather than shipped as empty files.
+- `legalAI` — added as-is, no restructuring. A note was prepended to its README
+  flagging it as a previous-stage project from
+  [Maximbrg/legalAI](https://github.com/Maximbrg/legalAI) that predates and is
+  unrelated to the rest of this repository.
 
 ### Re-syncing with upstream
 
