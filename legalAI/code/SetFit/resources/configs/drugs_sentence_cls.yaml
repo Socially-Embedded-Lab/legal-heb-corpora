@@ -1,0 +1,89 @@
+# Change the experiment name for the models that saved !!'
+experiment_name: 'more_cases'
+username: tak
+
+# paths - change the data_folder to where the pickle folder name
+data_path: "/Code/SetFit/resources/data/trainning/drugs/{data_folder}"
+save_dir: 'path/to/results'
+save_model_path: 'path/to/save/model'
+
+
+
+# models to train
+models_to_train:
+  - t-few: false
+  - roberta: false
+  - setfit: true
+
+# which version to train
+generated_data: False
+setfit: True
+balance: True # balance the train set
+save_model: True #if False, save just the result by label 
+
+first_label_list:
+  - CIR_PUNISHMENT
+  - GENERAL_CIRCUM
+  - CIRCUM_OFFENSE
+  - reject
+  - CONFESSION
+
+
+#second level labels
+second_label_list: 
+  - CIR_TYPE
+  - CIR_AMOUNT
+  - CIR_ROLE
+  - CIR_EQ
+  - REGRET
+  - RESPO
+
+
+
+#labels to ignore
+ignore_labels:
+  - "Unnamed: 0"
+  - verdict
+  - text
+
+pretrained_model_list:
+  # - HeNLP/HeRo
+  # - amberoad/bert-multilingual-passage-reranking-msmarco
+  - dicta-il/dictabert
+  # - avichr/Legal-heBERT
+  # - avichr/heBERT
+  # - onlplab/alephbert-base
+  
+
+# training arguments
+training_args:
+  batch_size: 64
+  body_learning_rate:
+    - 0.00002
+    - 0.000005
+  head_learning_rate: 0.002
+  l2_weight: 0.01
+  num_epochs: 5
+  end_to_end: True
+  evaluation_strategy: "epoch"
+  save_strategy: "epoch"
+  eval_steps: 3
+  load_best_model_at_end: True
+
+
+
+
+
+
+
+
+#for default version param
+# model_name_initial: test 
+# all_class: true
+# load_xlsx: true
+# num_epoch: 5
+# num_samples_list: [50,20,50,50,10] #How many samples would we like to take from each classifier respectively, the length of the list is required to be the same as labels_,
+# batch_size: 16
+# num_iteration: 5
+# pretrained_model : "amberoad/bert-multilingual-passage-reranking-msmarco"
+
